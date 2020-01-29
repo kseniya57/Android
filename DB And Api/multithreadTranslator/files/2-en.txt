@@ -1,0 +1,3 @@
+To understand how to count the files and get arrays of strings
+Implement the entry of lines in the file
+To the user the direction of translation

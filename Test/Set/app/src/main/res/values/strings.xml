@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Set</string>
+    <string name="title_activity_login">Register</string>
+    <string name="prompt_name">Name</string>
+    <string name="action_sign_in">Register</string>
+    <string name="welcome">"Welcome "</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="connection_error">"Connection error"</string>
+    <string name="set_removed">"Congratulations! Set removed!"</string>
+    <string name="win">"Congratulations! You won!"</string>
+    <string name="lost">"Wrong set! Try again..."</string>
+</resources>

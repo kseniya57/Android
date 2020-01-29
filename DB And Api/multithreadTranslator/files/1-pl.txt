@@ -1,0 +1,3 @@
+Wykorzystując doświadczenie w pracy z API Yandex.Tłumacza
+stworzyć aplikację, która tłumaczy wszystkie pliki
+w pewnym folderze z języka polskiego na inny język

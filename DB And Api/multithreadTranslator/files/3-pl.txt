@@ -1,0 +1,3 @@
+Napisz klasa-tłumacz (наследованный od Thread),
+projektant, którego jako opcji wyślij tekst,
+kierunek tłumaczenia, nazwa pliku do zapisu wyników

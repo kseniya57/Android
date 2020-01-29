@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Application Call</string>
+    <string name="geo">GEO</string>
+    <string name="browser">Браузер</string>
+    <string name="phone">Телефон</string>
+    <string name="call">Вызов</string>
+    <string name="value">Значение</string>
+</resources>

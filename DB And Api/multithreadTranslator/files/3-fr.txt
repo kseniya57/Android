@@ -1,0 +1,3 @@
+Écrire une classe-traducteur (héritée du Thread)
+dans le concepteur de laquelle, en tant que paramètres de transférer du texte
+la direction de la traduction, le nom de fichier pour l'enregistrement du résultat

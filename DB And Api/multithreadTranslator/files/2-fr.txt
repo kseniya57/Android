@@ -1,0 +1,3 @@
+Comprendre comment lire les fichiers du dossier et d'obtenir des tableaux de chaînes
+Réaliser les lignes d'enregistrement dans un fichier
+Obtenir de l'utilisateur de la direction de la traduction

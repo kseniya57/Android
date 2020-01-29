@@ -1,0 +1,3 @@
+To write a class-translator (inherited from Thread),
+to the designer which parameters to pass text
+the direction of translation, the name of the file to write the result

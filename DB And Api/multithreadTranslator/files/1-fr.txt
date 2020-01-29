@@ -1,0 +1,3 @@
+En utilisant l'expérience de travail avec l'API Yandex.L'interprète
+créer une application qui convertit les fichiers
+dans un dossier avec la langue russe, la langue de l'autre

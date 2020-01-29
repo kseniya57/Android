@@ -1,0 +1,11 @@
+Weather{name=Gelendzhik, temperature=7.25}
+Weather{name=Krsko, temperature=6.92}
+Weather{name=Tuapse, temperature=6.9}
+Weather{name=Anapa, temperature=6.67}
+Weather{name=Krasnodar, temperature=6.67}
+Weather{name=Novorossiysk, temperature=6.67}
+Weather{name=Krymsk, temperature=6.67}
+Weather{name=Rostov-na-Donu, temperature=6.1}
+Weather{name=Sochi, temperature=5.56}
+Weather{name=Moscow, temperature=0.6}
+Weather{name=Saint Petersburg, temperature=0.31}

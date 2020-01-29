@@ -1,0 +1,3 @@
+Dowiedzieć się, jak odczytać pliki z folderu i zobacz tablice wierszy
+Zrealizować zapis wiersza w pliku
+Uzyskać od użytkownika kierunek tłumaczenia

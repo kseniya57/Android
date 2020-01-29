@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Shopping List</string>
+    <string name="action_clear_all">Очистить</string>
+    <string name="id">ID</string>
+    <string name="name">Название</string>
+    <string name="price">Цена</string>
+    <string name="type">Тип</string>
+</resources>
