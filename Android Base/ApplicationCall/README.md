@@ -1,0 +1,10 @@
+## Вызов приложения, соответствующего Uri (веб-страница, геоточка, номер телефона)
+
+![](screens/Screenshot_1580030099.png)
+![](screens/Screenshot_1580030306.png)
+![](screens/Screenshot_1580030114.png)
+![](screens/Screenshot_1580030171.png)
+![](screens/Screenshot_1580030539.png)
+![](screens/Screenshot_1580030545.png)
+![](screens/Screenshot_1580030328.png)
+![](screens/Screenshot_1580030333.png)
