@@ -1,17 +1,16 @@
 package com.example.piechart;
-
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.AsyncTask;
 
 public class Sector {
-    float x, y, radius, startAngle, sweepAngle;
-    int color;
-    boolean highlighted;
+    private float x, y, radius, startAngle, sweepAngle;
+    private int color;
+    private boolean highlighted;
 
-    final int OFFSET = 30;
-
-    public Sector(float x, float y, float radius, float startAngle, float sweepAngle, int color) {
+    Sector(float x, float y, float radius, float startAngle, float sweepAngle, int color) {
         this.x = x;
         this.y = y;
         this.radius = radius;
@@ -20,15 +19,15 @@ public class Sector {
         this.color = color;
     }
 
-    public boolean istHighlighted() {
+    boolean istHighlighted() {
         return highlighted;
     }
 
-    public void setHighlighted(boolean h) {
+    void setHighlighted(boolean h) {
         highlighted = h;
     }
 
-    public void draw(Canvas c) {
+    void draw(Canvas c, float offset) {
         Paint p = new Paint(color);
         p.setColor(color);
         if (highlighted) {
@@ -46,11 +45,8 @@ public class Sector {
                 xMultiplier = -sin;
                 yMultiplier = -cos;
             }
-            System.out.println(angle);
-            float xOffset = angle == 90 || angle == 270 ? 0 : (float) (xMultiplier * OFFSET);
-            float yOffset = angle == 180 || angle == 0 ? 0 : (float) (yMultiplier * OFFSET);
-            System.out.println(xOffset);
-            System.out.println(yOffset);
+            float xOffset = angle == 90 || angle == 270 ? 0 : (float) (xMultiplier * offset);
+            float yOffset = angle == 180 || angle == 0 ? 0 : (float) (yMultiplier * offset);
             p.setShadowLayer((float)30, (float)0, (float)0, Color.DKGRAY);
             c.drawArc(x-radius + xOffset,y-radius + yOffset,x+radius + xOffset,y+radius + yOffset,360 - startAngle - sweepAngle, sweepAngle,true, p);
         } else {

@@ -4,9 +4,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
+import android.os.AsyncTask;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import androidx.annotation.Nullable;
@@ -18,15 +17,12 @@ public class DView extends View {
     ArrayList<Sector> sectors = new ArrayList<>();
     final Random random = new Random();
     int[] weights = {1};
-    final int[] colors = {
-           Color.GREEN,
-           Color.YELLOW,
-           Color.RED,
-           Color.BLUE,
-           Color.MAGENTA,
-    };
     float radius = 0, baseAngle = 0;
     float xc = 0, yc = 0;
+    private final static int OFFSET = 30;
+    private final static int INTERVAL = 50;
+    private boolean updating = false;
+    private int offset = 0;
 
     public DView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -64,7 +60,42 @@ public class DView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         for (Sector s : sectors) {
-            s.draw(canvas);
+            s.draw(canvas, offset);
+        }
+    }
+
+    private class DrawTask extends AsyncTask<String, Integer, Void> {
+        @Override
+        protected Void doInBackground(String... strings) {
+            long start = System.currentTimeMillis();
+            long end = start + OFFSET * INTERVAL;
+            int currentOffset = 1;
+            while(true) {
+                long currentMillis = System.currentTimeMillis();
+                if ((currentMillis - start) % INTERVAL == 0) {
+                    int newOffset = (int)((currentMillis - start)) / INTERVAL;
+                    if (newOffset > currentOffset) {
+                        currentOffset = newOffset;
+                        publishProgress(currentOffset);
+                    }
+                }
+                if(currentMillis > end) {
+                    break;
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            offset = values[0];
+            invalidate();
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            updating = false;
         }
     }
 
@@ -72,6 +103,10 @@ public class DView extends View {
     public boolean onTouchEvent(MotionEvent event) {
 
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            if (updating) {
+                return true;
+            }
+            updating = true;
             float x = event.getX() - xc;
             float y = yc - event.getY();
             double distanceToCenter = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
@@ -98,9 +133,8 @@ public class DView extends View {
                     sector.setHighlighted(true);
                 }
             }
+            new DrawTask().execute();
         }
-
-        invalidate(); // redraw
         return true; // handled
 
     }
